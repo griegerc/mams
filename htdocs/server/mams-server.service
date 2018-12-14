@@ -1,0 +1,10 @@
+[Unit]
+Description=MAMS Server
+After=syslog.target
+
+[Service]
+ExecStart=/usr/bin/php -f /var/www/mams/server/server.php
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

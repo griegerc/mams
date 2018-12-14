@@ -1,0 +1,47 @@
+; =================================================
+; This is a sample configuration file. For real
+; usage copy this file to "config.ini" and adapt
+; all relevant values.
+; =================================================
+
+;
+; App environment
+;    supported: "production", "development"
+;
+ENVIRONMENT = "development"
+
+;
+; UDP-Server settings
+;
+SERVER_HOST        = "0.0.0.0"
+SERVER_PORT        = "41234"
+SERVER_MAX_RUNTIME = "3600"     ; default 60min = 3600s
+
+;
+; App timezone (see: http://www.php.net/manual/en/timezones.php)
+;    default: "UTC"
+;
+TIMEZONE = "UTC"
+
+;
+; Default MVC behaviour
+;
+DEFAULT_CONTROLLER      = "portal"
+DEFAULT_AUTH_CONTROLLER = "analyze"
+DEFAULT_DB_STATEMENTS   = "App_DatabaseStmt"
+
+;
+; Logging levels:
+;    supported: "DEBUG" (default) | "INFO" | "WARN" | "ERROR" | "FATAL"
+;
+LOG_ENABLED     = 1
+LOG_LEVEL       = "DEBUG"
+LOG_FILE        = "/var/log/mams.log"
+
+;
+; MySQL database settings
+;
+MYSQL_HOST     = "127.0.0.1"
+MYSQL_USERNAME = "mams"
+MYSQL_PASSWORD = "secret"
+MYSQL_DATABASE = "mams"
