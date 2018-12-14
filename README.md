@@ -2,16 +2,16 @@
     Author: Christian Grieger
     Version: 1.0 (2018-12-14)
     License: GNU General Public License v3.0 (see file "LICENSE")
-This microservice receives data from online games via UDP and can show them for later analyzing.
+This microservice receives data from online games via UDP and can visualize them for analyzing purposes.
 The principle behind this service is to send specific measurement data to the server when they are 
-changing/incrementing/decrementing over time. The analyzing web interface can then visualize these stored
-data in a graphical way. It is useful to measure e.g. user logins or registrations, certain game values, 
-quest accomplishements and much more... 
+changed/incremented/decremented over time. The analyzing web interface can then visualize these stored
+data in a graphical way. It is useful to measure e.g. user logins/registrations, certain game balancing values, 
+quest accomplishments and much more... 
 
 ## Data receiving
-After the MASM server is started you can send measurement data to the server via UDP.
+After the MASM server is started you can send measurement data to it via UDP.
 ### Data format
-The sent data should always be JSON formatted with the following content:
+The sent data must be formatted in JSON with the following content:
 
     {    
         "gameId": 19,
@@ -20,24 +20,22 @@ The sent data should always be JSON formatted with the following content:
     }
 ### PHP client example
     <?php
-    $host = '192.168.182.129';
-    $port = 41234;
+    $host = '192.168.1.2';
+    $port = 5678;
     
     $socket = fsockopen('udp://'.$host.':'.$port);
-    fputs($socket, '{"gameId": 5, "key": "userLogin", "value": 1}');
+    fputs($socket, '{"gameId": 15, "key": "userLogin", "value": 1}');
 
 
 ## Data analysing
-    ...
-
+*...to be specified...*
 
 ## Limitations
- - the maximum length of the sent data must be smaller than 512 bytes
+ - the maximum length of the sent data must not exceed 512 bytes
  - the maximum amount of measure keys are 65535 and their length must not exceed 32 characters
- - there are maximmal 255 different gameIds possible
- - the amount of data sets must not exceed 4294967295
+ - there are maximmal 255 different game-IDs possible
+ - the total amount of data sets must not exceed 4294967295
  - the sent value must be within -32768 and 32767
-
 
 ## Installation & setup
 ### Requirements
