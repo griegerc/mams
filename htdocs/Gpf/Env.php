@@ -10,7 +10,7 @@ class Gpf_Env
      */
     public function __construct()
     {
-        $this->_params = array_merge($_GET, $_POST);
+        $this->_params = array_merge($_GET, $_POST, $_SESSION);
     }
 
     /**

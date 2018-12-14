@@ -5,24 +5,12 @@ class Gpf_Core
     const PARAM_CONTROLLER = 'controller';
     const PARAM_ACTION     = 'action';
 
-    const MAJOR_VERSION = '1';
-    const MINOR_VERSION = '0';
-    const BUILD_VERSION = '20181207';
-
     /**
      * @return string
      */
     public static function getDefaultController()
     {
         return (string)Gpf_Config::get('DEFAULT_CONTROLLER');
-    }
-
-    /**
-     * @return string
-     */
-    public static function getDefaultAuthController()
-    {
-        return (string)Gpf_Config::get('DEFAULT_AUTH_CONTROLLER');
     }
 
     /**
@@ -53,7 +41,7 @@ class Gpf_Core
      */
     private static function _parseRequest()
     {
-        $env = array_merge($_GET, $_POST);
+        $env = array_merge($_GET, $_POST, $_SESSION);
 
         foreach($env as &$param) {
             if (is_string($param)) {
@@ -98,10 +86,7 @@ class Gpf_Core
         $env[self::PARAM_ACTION]     = (isset($env[self::PARAM_ACTION]))?$env[self::PARAM_ACTION]:'index';
 
         switch ($env[self::PARAM_CONTROLLER]) {
-            case '':
-                $env[self::PARAM_CONTROLLER] = self::getDefaultController();
-                break;
-            case 'api':
+            case 'analyze':
                 break;
             default:
                 // redirect to the default page, except he clicked on a public area.

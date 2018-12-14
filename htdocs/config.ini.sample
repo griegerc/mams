@@ -11,6 +11,18 @@
 ENVIRONMENT = "development"
 
 ;
+; World language (ISO 639-1)
+;    supported: "de" | "en"
+;
+LANGUAGE = "en"
+
+;
+; Authentication credentials for the web interface
+;
+APP_USERNAME = "mams"
+APP_PASSWORD = "secret"
+
+;
 ; UDP-Server settings
 ;
 SERVER_HOST        = "0.0.0.0"
@@ -26,8 +38,7 @@ TIMEZONE = "UTC"
 ;
 ; Default MVC behaviour
 ;
-DEFAULT_CONTROLLER      = "portal"
-DEFAULT_AUTH_CONTROLLER = "analyze"
+DEFAULT_CONTROLLER      = "analyze"
 DEFAULT_DB_STATEMENTS   = "App_DatabaseStmt"
 
 ;

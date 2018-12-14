@@ -70,8 +70,9 @@ if (Gpf_Config::get('ENVIRONMENT') == 'development') {
     error_reporting(0);
 }
 
-
+session_start();
 $env = Gpf_Core::processRequest();
+
 $controllerClassName = 'Controllers_'.Gpf_Core::getCamelCased($env[Gpf_Core::PARAM_CONTROLLER]);
 $actionMethodName = Gpf_Core::getCamelCased($env[Gpf_Core::PARAM_ACTION]).'Action';
 
@@ -79,4 +80,23 @@ $actionMethodName = Gpf_Core::getCamelCased($env[Gpf_Core::PARAM_ACTION]).'Actio
 $controller = new $controllerClassName($env);
 $controller->$actionMethodName();
 
-print json_encode($controller->output);
+if (isset($controller->env['jsonOutput'])) {
+    print json_encode($controller->env);
+    exit(0);
+} else if ($controller->renderView) {
+    $viewClassName = 'Views_'.Gpf_Core::getCamelCased($env[Gpf_Core::PARAM_CONTROLLER]);
+
+    /* @var $view Views_Abstract */
+    $view = new $viewClassName($controller->env);
+
+    if ($controller->layout !== NULL) {
+        $layoutName = 'Layouts_'.$controller->layout;
+
+        /** @var Layouts_Abstract $layout */
+        $layout = new $layoutName($controller->env, $view);
+        $layout->render();
+    } else {
+        $actionName = $view->action;
+        $view->$actionName();
+    }
+}

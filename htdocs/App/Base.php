@@ -30,17 +30,4 @@ class App_Base
     {
         return Gpf_Database::getInstance();
     }
-
-    /**
-     * Converts a integer value (0 or 1) to boolean
-     * @param int $intValue
-     * @return bool
-     */
-    public static function intToBool($intValue)
-    {
-        if ((int)$intValue === 0) {
-            return false;
-        }
-        return true;
-    }
 }
