@@ -22,6 +22,9 @@ class App_DatabaseStmt
             'INSERT INTO `measureData` (`dataTime`, `measureTypeId`, `value`) VALUES (?, ?, ?);',
 
         'getMeasureData' =>
-            'SELECT `dataTime`, `value` FROM `measureData` WHERE `measureTypeId` = ? AND `dataTime` >= ?;'
+            'SELECT `dataTime`, SUM(`value`) as `value`
+            FROM `measureData`            
+            WHERE `measureTypeId` = ? AND `dataTime` >= ?
+            GROUP BY (`dataTime` DIV 1800);'
     );
 }

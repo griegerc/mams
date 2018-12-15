@@ -101,6 +101,10 @@ name it e.g. `mams-server.service` with the following contents:
     [Install]
     WantedBy=multi-user.target
 
+Then you have to reload the daemon:
+
+    > systemctl daemon-reload
+
 Start/stop this service with:
 
     > systemctl start mams-server.service
