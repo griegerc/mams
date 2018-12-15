@@ -22,6 +22,6 @@ class App_DatabaseStmt
             'INSERT INTO `measureData` (`dataTime`, `measureTypeId`, `value`) VALUES (?, ?, ?);',
 
         'getMeasureData' =>
-            'SELECT * FROM `measureData` WHERE `measureTypeId` = ? AND `dataTime` >= ?;'
+            'SELECT `dataTime`, `value` FROM `measureData` WHERE `measureTypeId` = ? AND `dataTime` >= ?;'
     );
 }

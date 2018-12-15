@@ -75,6 +75,11 @@ class Views_Analyze extends Views_Abstract
      */
     public function measureData()
     {
+        $measureTypeId = (int)$this->_getParam('measureTypeId');
+        if ($measureTypeId <= 0) {
+            return;
+        }
+
         $ranges = array(
             array(3600, '1h'),
             array(14400, '4h'),
@@ -90,7 +95,7 @@ class Views_Analyze extends Views_Abstract
         ?>
         <form action="" method="get" class="jsForm jsEvent:submitMeasureType">
             <input type="hidden" name="measureTypeId" class="jsField"
-                   value="<?php print $this->_getParam('measureTypeId'); ?>"/>
+                   value="<?php print $measureTypeId; ?>"/>
             <label for="range">Range:</label>
             <select id="range" name="range" class="jsField">
                 <?php
