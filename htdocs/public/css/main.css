@@ -5,8 +5,8 @@
 
 body {
     font-family: Tahoma, sans-serif;
-    font-size: 13px;
-    padding: 10px;
+    font-size: 15px;
+    padding: 5px;
     margin: 0;
 }
 
@@ -14,19 +14,23 @@ h1 {
     margin-bottom: 20px;
 }
 
-input {
+input, select {
     padding: 1px 5px 1px 5px;
 }
 
+input, select {
+    font-size: 15px;
+}
+
 .boxGames {
-    width: 150px;
-    height: 30px;
+    width: 170px;
+    height: 50px;
     float: left;
 }
 
 .boxMeasureTypes {
-    width: 355px;
-    height: 30px;
+    width: 390px;
+    height: 50px;
     float: left;
 }
 

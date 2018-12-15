@@ -1,0 +1,132 @@
+body {
+    background-color: #FFFFFF;
+    color: #000000;
+    font-family: Tahoma, sans-serif;
+    font-size: 12px;
+    margin: 0;
+    padding: 10px;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0;
+    padding: 0 0 10px 0;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 17px;
+    margin: 0;
+    padding: 0 0 10px 0;
+}
+
+p {
+    line-height: 19px;
+    margin: 0;
+    padding: 0 0 10px 0;
+}
+
+form {
+    margin: 0;
+    padding: 0;
+}
+
+input, select, textarea {
+    font: normal 12px monospace;
+}
+
+a {
+    color: #538DAC;
+}
+
+table {
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th {
+    font-size: 12px;
+    font-weight: bold;
+    text-align: left;
+}
+
+td {
+    font-size: 12px;
+    text-align: left;
+    vertical-align: top;
+}
+
+
+
+
+
+.column {
+    float: left;
+    margin-right: 30px;
+}
+
+.clear {
+    clear: both;
+}
+
+.right {
+    text-align: right;
+}
+
+
+.table1 {
+    border: 1px solid #909090;
+}
+
+.table1 th {
+    background-color: #E0EAF0;
+    padding: 4px;
+    border-top: 1px solid #538DAC;
+    border-bottom: 1px solid #538DAC;
+    border-right: 1px solid #538DAC;
+}
+
+.table1 th a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.table1 td {
+    padding: 3px 6px 3px 6px;
+    border-top: 1px solid #538DAC;
+    border-bottom: 1px solid #538DAC;
+}
+
+
+
+.tableInvisible {
+    border: none;
+    margin: 0;
+}
+
+.tableInvisible th,
+.tableInvisible td {
+    padding: 0 3px 2px 0;
+    border: none;
+}
+
+.tableInvisible th {
+    background: none;
+}
+
+.error, th a.error, td a.error {
+    color: #FF0000;
+    font-weight: bold;
+    padding: 0;
+}
+
+.success {
+    color: #009933;
+    font-weight: bold;
+}
+
+.disabled {
+    color: #BBBBBB;
+}
+

@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * This script inserts some dummy data for testing the analyzing web interface
+ */
 require dirname(dirname(dirname(__FILE__))) . '/Gpf/init.php';
 $db = Gpf_Database::getInstance();
 

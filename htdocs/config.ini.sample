@@ -17,10 +17,16 @@ ENVIRONMENT = "development"
 LANGUAGE = "en"
 
 ;
-; Authentication credentials for the web interface
+; Access credentials for the web interface
 ;
 APP_USERNAME = "mams"
 APP_PASSWORD = "secret"
+
+;
+; Access credentials for the admin area
+;
+ADMIN_USERNAME = "admin"
+ADMIN_PASSWORD = "secret"
 
 ;
 ; UDP-Server settings
