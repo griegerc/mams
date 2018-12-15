@@ -28,7 +28,8 @@ The sent data must be formatted in JSON with the following content:
 
 
 ## Data analysing
-*...to be specified...*
+For analyzing your stored data you only have to go to `http://mams.lan/analyze` 
+(depends on your webserver configuration) and select after each other `GameId -> ` 
 
 ## Limitations
  - the maximum length of the sent data must not exceed 512 bytes
